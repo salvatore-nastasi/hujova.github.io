@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Change Button Color</title>
-<script src="https://cdn.eu.amplitude.com/script/eec0aee9a34cea06329b9b9f819e2496.js"></script>
+<!-- <script src="https://cdn.eu.amplitude.com/script/eec0aee9a34cea06329b9b9f819e2496.js"></script> -->
 
 <script>
 amplitude.init('eec0aee9a34cea06329b9b9f819e2496', {
@@ -19,7 +19,8 @@ amplitude.init('eec0aee9a34cea06329b9b9f819e2496', {
       },
       'instanceName':'Consented',
   });
-  // Manually configure session replay. For example, set sample
+  // Manually configure session replay. 
+  // For example, set sample
   // rate to 1 to enable session replay.
   amplitude.add(window.sessionReplay.plugin());
   // Here's an example of an enrichment plugin that includes an extra event property page_url to all events.
@@ -49,13 +50,93 @@ const eventProperties = {
   'referrer': referrer,
 };
 
-amplitude.track('page load consented', eventProperties);
+//amplitude.track('page load consented', eventProperties);
 
 
 
 </script>
 
 <style>
+      body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .about-section {
+            background-color: white;
+            padding: 50px;
+            margin: 50px auto;
+            width: 60%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-section {
+            background-color: white;
+            padding: 50px;
+            margin: 50px auto;
+            width: 60%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-info {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .contact-info a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Style the navigation bar */
+        .navbar {
+            position: fixed;  /* Keep navbar fixed at the top */
+            top: 0;
+            left: 0;
+            width: 100%;  /* Full width */
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            backdrop-filter: blur(10px); /* Adds a blur effect */
+            z-index: 1000; /* Ensures it's above other content */
+        }
+
+        /* Style for navigation links */
+        .navbar a {
+            color: white;  /* White text */
+            text-decoration: none;  /* Remove underline */
+            padding: 14px 20px;  /* Add padding */
+            font-size: 18px;
+            margin: 0 15px;
+            transition: 0.3s;  /* Smooth hover effect */
+        }
+
+        /* Hover effect */
+        .navbar a:hover {
+            color: #FFD700;  /* Change text color on hover */
+        }
+
+        /* Add some content below the navbar to show scrolling */
+        .content {
+            margin-top: 60px; /* Prevent content from hiding under the navbar */
+            padding: 20px;
+            height: 2000px; /* Just for scrolling demo */
+            background-color: #f4f4f4;
+        }
+    
+
 .button {
   border: none;
   color: white;
@@ -75,8 +156,105 @@ amplitude.track('page load consented', eventProperties);
 
 <body>
 
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <!-- <a href="#main">Main</a> -->
+        <a href="#about">About</a>
+        <a href="#contactus">Contact Us</a>
+    </div>
+
+
+<div class="content" align="center"> 
+<a name="home"><h1>&nbsp;</h1></a>
+<p>&nbsp;</p><h2>pick a color!</h2>
 <button id="button1" onclick="myFunction1(this)" class="button button1">Green</button>
 <button id="button2" onclick="myFunction2(this)" class="button button2">Blue</button>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+        <a name="about"><h1>&nbsp;</h1></a>
+        <p>&nbsp;</p><h2>About</h2>
+
+            <div class="about-section">
+        
+        <p>Welcome to our site, where creativity meets innovation!  
+           Founded in 2025, we are passionate about providing top-notch solutions tailored to your needs.  
+           Whether it's technology, design, or business solutions, our dedicated team works tirelessly  
+           to deliver excellence. We believe in quality, transparency, and customer satisfaction.  
+           Join us on this journey as we strive to make a difference, one step at a time!</p>
+    </div>
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+        <a name="contactus"><h1>&nbsp;</h1></a>
+        <p>&nbsp;</p><h2>Contact Us</h2>
+ 
+     <div class="contact-section">
+        
+        <p>Have questions, feedback, or just want to say hello? We'd love to hear from you!  
+           Reach out to us through any of the channels below, and our team will get back to you as soon as possible.</p>
+        
+        <div class="contact-info">
+            <p><strong>Email:</strong> <a href="mailto:info@yourwebsite.com">info@yourwebsite.com</a></p>
+            <p><strong>Phone:</strong> +1 (123) 456-7890</p>
+            <p><strong>Address:</strong> 123 Main Street, City, Country</p>
+        </div>
+    </div>       
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+</div>
 
 <script>
 function myFunction1() {
