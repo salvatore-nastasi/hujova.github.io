@@ -11,9 +11,8 @@
 // Here's an example of an enrichment plugin that includes an extra event property page_url to all events.
 class enrichPageUrlPlugin {
 constructor() {
-    
-    this.name: 'all-events-tracking-enrichment',
-    this.type: 'enrichment',
+    this.name='all-events-tracking-enrichment',
+    this.type='enrichment',
     setup: async () => undefined,
   return {
     execute: async (event: Event) => {
