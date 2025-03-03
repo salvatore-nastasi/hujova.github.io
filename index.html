@@ -13,7 +13,11 @@ class enrichPageUrlPlugin {
 constructor() {
     this.name='all-events-tracking-enrichment',
     this.type='enrichment',
-    setup: async () => undefined,
+    
+    setup(_, amplitude): async () =>  {
+    console.log("[Plugin] Setting up...")
+      }    
+     
   return {
     execute: async (event: Event) => {
         console.log("[Plugin] Executing on event:", event.event_type);
