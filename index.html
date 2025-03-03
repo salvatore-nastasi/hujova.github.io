@@ -9,7 +9,9 @@
 <script>
 
 // Here's an example of an enrichment plugin that includes an extra event property page_url to all events.
-const enrichPageUrlPlugin = (): EnrichmentPlugin => {
+class enrichPageUrlPlugin {
+constructor() {
+    
     this.name: 'all-events-tracking-enrichment',
     this.type: 'enrichment',
     setup: async () => undefined,
@@ -25,6 +27,7 @@ const enrichPageUrlPlugin = (): EnrichmentPlugin => {
       return event;
     },
   }
+}
 };
  
 
@@ -49,7 +52,7 @@ amplitude.init('eec0aee9a34cea06329b9b9f819e2496', {
     
       if (window.amplitude) {
     console.log("[Plugin] Adding plugin...");
-    window.amplitude.add(enrichPageUrlPlugin());
+    window.amplitude.add(new enrichPageUrlPlugin());
     console.log("[Plugin] Plugin successfully added.");
   } else {
     console.warn("[ lugin] Amplitude not found.");
