@@ -19,8 +19,8 @@ constructor() {
         console.log("[Plugin] Executing on event:", event.event_type);
       event.event_properties = {
         ...event.event_properties,
-        'current page url': location.href,
-        'amplitude instance': amplitude.instanceName,
+        'current page url'= location.href,
+        'amplitude instance'= amplitude.instanceName,
       };
         console.log("[Plugin] Updated event properties:", event.event_properties);
       return event;
