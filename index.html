@@ -7,33 +7,6 @@
 
 <script>
 
-// Here's an example of an enrichment plugin that includes an extra event property page_url to all events.
-class enrichPageUrlPlugin {
-constructor() {
-    this.name='all-events-tracking-enrichment',
-    this.type='enrichment',
-    
-    setup(_, amplitude) =>  {
-    console.log("[Plugin] Setting up...")
-      }    
-     
-  return {
-    execute: async (event: Event) => {
-        console.log("[Plugin] Executing on event:", event.event_type);
-      event.event_properties = {
-        ...event.event_properties,
-        'current page url'= location.href,
-        'amplitude instance'= amplitude.instanceName,
-      };
-        console.log("[Plugin] Updated event properties:", event.event_properties);
-      return event;
-    },
-  }
-}
-};
- 
-
-      
 amplitude.init('eec0aee9a34cea06329b9b9f819e2496', {
       'serverZone': 'EU',
       'autocapture': {
@@ -51,16 +24,6 @@ amplitude.init('eec0aee9a34cea06329b9b9f819e2496', {
   // rate to 1 to enable session replay.
   amplitude.add(window.sessionReplay.plugin({sampleRate:1}));
   
-    
-      if (window.amplitude) {
-    console.log("[Plugin] Adding plugin...");
-    window.amplitude.add(new enrichPageUrlPlugin());
-    console.log("[Plugin] Plugin successfully added.");
-  } else {
-    console.warn("[ lugin] Amplitude not found.");
-  }
-    
-
 var domainname = window.location.host;
 var pageurl = window.location.href;
 var referrer = window.document.referrer;
